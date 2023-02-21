@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import Search from './components/Search';
+import Buttons from './components/Buttons';
+import News from './components/News';
+import { DefaultTitle } from './components/Title';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <DefaultTitle>
+        <h1>search hacker news</h1>
+      </DefaultTitle>
+      <Search />
+      <Buttons />
+      <News />
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.section`
+  position: relative;
+  max-width: 900px;
+  margin: 80px auto 50px;
+  @media (max-width: 670px) {
+    padding: 20px;
+  }
+`;
 
 export default App;
